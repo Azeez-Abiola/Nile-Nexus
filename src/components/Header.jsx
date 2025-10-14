@@ -1,8 +1,9 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { Link, useLocation } from 'react-router-dom'
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
+  const [isScrolled, setIsScrolled] = useState(false)
   const location = useLocation()
 
   const navigation = [
@@ -14,39 +15,83 @@ const Header = () => {
 
   const isActive = (path) => location.pathname === path
 
+  // Handle scroll effect
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 20)
+    }
+    window.addEventListener('scroll', handleScroll)
+    return () => window.removeEventListener('scroll', handleScroll)
+  }, [])
+
+  // Scroll to top when navigating
+  const handleNavigation = () => {
+    setIsMenuOpen(false)
+    window.scrollTo({ top: 0, behavior: 'smooth' })
+  }
+
   return (
     <>
-      <header className="bg-white/95 backdrop-blur-sm border-b border-gray-300 sticky top-0 z-50">
+      <header className={`sticky top-0 z-50 transition-all duration-300 ${
+        isScrolled 
+          ? 'bg-white/95 backdrop-blur-md shadow-lg border-b border-gray-100' 
+          : 'bg-white/90 backdrop-blur-sm border-b border-gray-200'
+      }`}>
         <nav className="container-custom">
-          <div className="flex justify-between items-center py-4">
+          <div className={`flex justify-between items-center transition-all duration-300 ${
+            isScrolled ? 'py-3' : 'py-4'
+          }`}>
             {/* Logo */}
             <div className="flex items-center">
-              <Link to="/" className="text-2xl font-display font-bold text-navy">
+              <Link 
+                to="/" 
+                className={`font-display font-bold transition-all duration-300 ${
+                  isScrolled ? 'text-xl' : 'text-2xl'
+                } text-navy hover:text-primary-600`}
+                onClick={handleNavigation}
+              >
                 Nile Nexus
                 <span className="text-primary-500 ml-1">Talents</span>
               </Link>
             </div>
 
             {/* Desktop Navigation */}
-            <div className="hidden md:flex items-center space-x-8">
-              {navigation.map((item) => (
-                <Link
-                  key={item.name}
-                  to={item.href}
-                  className={`font-medium transition-colors duration-200 ${
-                    isActive(item.href)
-                      ? 'text-primary-500'
-                      : 'text-gray-700 hover:text-primary-500'
-                  }`}
-                >
-                  {item.name}
-                </Link>
-              ))}
+            <div className="hidden md:flex items-center">
+              <div className="flex items-center space-x-1 mr-8">
+                {navigation.map((item) => (
+                  <Link
+                    key={item.name}
+                    to={item.href}
+                    className={`relative px-4 py-2 rounded-lg font-medium transition-all duration-300 group ${
+                      isActive(item.href)
+                        ? 'text-primary-600 bg-primary-50'
+                        : 'text-gray-700 hover:text-primary-600 hover:bg-gray-50'
+                    }`}
+                    onClick={handleNavigation}
+                  >
+                    {item.name}
+                    {isActive(item.href) && (
+                      <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-1 h-1 bg-primary-500 rounded-full"></div>
+                    )}
+                    <div className={`absolute inset-0 rounded-lg bg-primary-500/10 scale-0 group-hover:scale-100 transition-transform duration-300 ${isActive(item.href) ? 'opacity-100' : 'opacity-0'}`}></div>
+                  </Link>
+                ))}
+              </div>
+              
               <Link
                 to="/contact"
-                className="btn-primary"
+                className={`relative overflow-hidden bg-gradient-to-r from-primary-500 to-primary-600 text-white font-semibold rounded-full transition-all duration-300 hover:shadow-lg hover:scale-105 transform group ${
+                  isScrolled ? 'px-6 py-2.5 text-sm' : 'px-8 py-3 text-base'
+                }`}
+                onClick={handleNavigation}
               >
-                Get Quote
+                <span className="relative z-10 flex items-center">
+                  <svg className="w-4 h-4 mr-2 group-hover:rotate-12 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
+                  </svg>
+                  Get Quote
+                </span>
+                <div className="absolute inset-0 bg-gradient-to-r from-primary-600 to-primary-700 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></div>
               </Link>
             </div>
 
@@ -91,7 +136,7 @@ const Header = () => {
                       animationDelay: `${index * 100}ms`,
                       animation: isMenuOpen ? 'fadeInUp 0.6s ease-out forwards' : 'none'
                     }}
-                    onClick={() => setIsMenuOpen(false)}
+                    onClick={handleNavigation}
                   >
                     {item.name}
                   </Link>
@@ -104,7 +149,7 @@ const Header = () => {
               <Link
                 to="/contact"
                 className="inline-block bg-gradient-to-r from-primary-500 to-primary-600 text-white px-12 py-4 rounded-full text-xl font-semibold transition-all duration-300 hover:shadow-2xl hover:scale-105 transform"
-                onClick={() => setIsMenuOpen(false)}
+                onClick={handleNavigation}
               >
                 Get Free Quote
               </Link>
@@ -115,6 +160,7 @@ const Header = () => {
               <a 
                 href="mailto:info@nilenexus.co.uk" 
                 className="text-gray-600 hover:text-primary-500 transition-colors text-lg"
+                onClick={() => setIsMenuOpen(false)}
               >
                 info@nilenexus.co.uk
               </a>

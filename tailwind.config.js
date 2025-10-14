@@ -23,8 +23,9 @@ export default {
         }
       },
       fontFamily: {
-        'display': ['Clash Display', 'system-ui', 'sans-serif'],
-        'body': ['Inter', 'system-ui', 'sans-serif'],
+        'display': ['Space Grotesk', 'system-ui', 'sans-serif'],
+        'body': ['Plus Jakarta Sans', 'system-ui', 'sans-serif'],
+        'sans': ['Plus Jakarta Sans', 'system-ui', 'sans-serif'],
       },
       fontSize: {
         'display-xl': ['48px', { lineHeight: '56px' }],

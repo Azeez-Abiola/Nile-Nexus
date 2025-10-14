@@ -136,7 +136,7 @@ const Contact = () => {
         ></div>
         
         <div className="relative container-custom py-20">
-          <div className="max-w-4xl mx-auto text-center">
+          <div className="max-w-4xl mx-auto text-center" data-aos="fade-up">
             <h1 className="text-display-xl md:text-6xl font-display font-bold mb-6">
               Let's Get in Touch
             </h1>
@@ -153,7 +153,7 @@ const Contact = () => {
         <div className="container-custom">
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
             {/* Contact Form */}
-            <div className="lg:col-span-2">
+            <div className="lg:col-span-2" data-aos="fade-right">
               <Card className="h-fit">
                 <h2 className="text-2xl font-display font-bold text-navy mb-6">
                   Send us a Message
@@ -268,7 +268,7 @@ const Contact = () => {
             </div>
 
             {/* Contact Info */}
-            <div className="space-y-8">
+            <div className="space-y-8" data-aos="fade-left">
               <Card>
                 <h3 className="text-xl font-display font-semibold text-navy mb-6">
                   Contact Information
@@ -326,7 +326,7 @@ const Contact = () => {
       </section>
 
       {/* Map Section */}
-      <section className="bg-gray-100">
+      <section className="bg-gray-100" data-aos="fade-up">
         <div className="h-96 bg-gray-300 flex items-center justify-center">
           <div className="text-center text-gray-600">
             <svg className="w-16 h-16 mx-auto mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -342,7 +342,7 @@ const Contact = () => {
       {/* FAQ Section */}
       <section className="section-padding bg-white">
         <div className="container-custom">
-          <div className="text-center mb-16">
+          <div className="text-center mb-16" data-aos="fade-up">
             <h2 className="text-display-lg font-display font-bold text-navy mb-4">
               Frequently Asked Questions
             </h2>
@@ -355,7 +355,7 @@ const Contact = () => {
           <div className="max-w-4xl mx-auto">
             <div className="space-y-6">
               {faqs.map((faq, index) => (
-                <Card key={index}>
+                <Card key={index} data-aos="fade-up" data-aos-delay={index * 100}>
                   <h3 className="text-lg font-semibold text-navy mb-3">
                     {faq.question}
                   </h3>

@@ -105,7 +105,7 @@ const Services = () => {
         ></div>
         
         <div className="relative container-custom py-20">
-          <div className="max-w-4xl mx-auto text-center">
+          <div className="max-w-4xl mx-auto text-center" data-aos="fade-up">
             <h1 className="text-display-xl md:text-6xl font-display font-bold mb-6">
               Our Services
             </h1>
@@ -123,7 +123,7 @@ const Services = () => {
           <div className="space-y-16">
             {services.map((service, index) => (
               <div key={index} className={`grid grid-cols-1 lg:grid-cols-2 gap-12 items-center ${index % 2 === 1 ? 'lg:grid-flow-col-dense' : ''}`}>
-                <div className={index % 2 === 1 ? 'lg:col-start-2' : ''}>
+                <div className={index % 2 === 1 ? 'lg:col-start-2' : ''} data-aos={index % 2 === 0 ? "fade-right" : "fade-left"}>
                   <div className="aspect-video rounded-xl overflow-hidden shadow-lg">
                     <img 
                       src={service.image} 
@@ -133,7 +133,7 @@ const Services = () => {
                   </div>
                 </div>
                 
-                <div className={index % 2 === 1 ? 'lg:col-start-1 lg:row-start-1' : ''}>
+                <div className={index % 2 === 1 ? 'lg:col-start-1 lg:row-start-1' : ''} data-aos={index % 2 === 0 ? "fade-left" : "fade-right"}>
                   <h2 className="text-display-md font-display font-bold text-navy mb-4">
                     {service.title}
                   </h2>
@@ -141,7 +141,7 @@ const Services = () => {
                     {service.description}
                   </p>
                   
-                  <div className="mb-6">
+                  <div className="mb-6" data-aos="fade-up" data-aos-delay="100">
                     <h3 className="text-xl font-semibold text-navy mb-3">What We Offer:</h3>
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
                       {service.features.map((feature, featureIndex) => (
@@ -155,7 +155,7 @@ const Services = () => {
                     </div>
                   </div>
                   
-                  <div className="mb-6">
+                  <div className="mb-6" data-aos="fade-up" data-aos-delay="200">
                     <h3 className="text-xl font-semibold text-navy mb-3">Technologies:</h3>
                     <div className="flex flex-wrap gap-2">
                       {service.technologies.map((tech, techIndex) => (
@@ -169,11 +169,13 @@ const Services = () => {
                     </div>
                   </div>
                   
-                  <Link to="/contact">
-                    <Button>
-                      Get Started with {service.title}
-                    </Button>
-                  </Link>
+                  <div data-aos="fade-up" data-aos-delay="300">
+                    <Link to="/contact">
+                      <Button>
+                        Get Started with {service.title}
+                      </Button>
+                    </Link>
+                  </div>
                 </div>
               </div>
             ))}
@@ -184,7 +186,7 @@ const Services = () => {
       {/* Process Section */}
       <section className="section-padding bg-gray-50">
         <div className="container-custom">
-          <div className="text-center mb-16">
+          <div className="text-center mb-16" data-aos="fade-up">
             <h2 className="text-display-lg font-display font-bold text-navy mb-4">
               Our Development Process
             </h2>
@@ -221,7 +223,7 @@ const Services = () => {
                 image: 'https://images.unsplash.com/photo-1521737604893-d14cc237f11d?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80'
               }
             ].map((phase, index) => (
-              <Card key={index} className="text-center">
+              <Card key={index} className="text-center" data-aos="fade-up" data-aos-delay={index * 100}>
                 <div className="aspect-square w-20 h-20 mx-auto mb-4 rounded-full overflow-hidden">
                   <img 
                     src={phase.image} 
@@ -247,24 +249,26 @@ const Services = () => {
       {/* CTA Section */}
       <section className="section-padding bg-primary-500 text-white">
         <div className="container-custom text-center">
-          <h2 className="text-display-lg font-display font-bold mb-6">
-            Ready to Start Your Project?
-          </h2>
-          <p className="text-xl mb-8 max-w-2xl mx-auto">
-            Let's discuss how our services can help transform your business. 
-            Get a free consultation and project estimate today.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link to="/contact">
-              <Button size="lg" className="bg-white text-primary-600 hover:bg-gray-100">
-                Get Free Consultation
-              </Button>
-            </Link>
-            <Link to="/about">
-              <Button variant="secondary" size="lg" className="border-white text-white hover:bg-white hover:text-primary-600">
-                Learn About Our Team
-              </Button>
-            </Link>
+          <div data-aos="fade-up">
+            <h2 className="text-display-lg font-display font-bold mb-6">
+              Ready to Start Your Project?
+            </h2>
+            <p className="text-xl mb-8 max-w-2xl mx-auto">
+              Let's discuss how our services can help transform your business. 
+              Get a free consultation and project estimate today.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Link to="/contact">
+                <Button size="lg" className="bg-white text-primary-600 hover:bg-gray-100">
+                  Get Free Consultation
+                </Button>
+              </Link>
+              <Link to="/about">
+                <Button variant="secondary" size="lg" className="border-white text-white hover:bg-white hover:text-primary-600">
+                  Learn About Our Team
+                </Button>
+              </Link>
+            </div>
           </div>
         </div>
       </section>
