@@ -33,7 +33,7 @@ function App() {
 
   return (
     <Router>
-      <div className="min-h-screen bg-white">
+      <div className="min-h-screen bg-white overflow-x-hidden">
         <ScrollToTop />
         <Header />
         <main>

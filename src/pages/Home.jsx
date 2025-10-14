@@ -55,9 +55,9 @@ const Home = () => {
   ]
 
   return (
-    <div className="overflow-x-hidden">
+    <div>
       {/* Hero Section */}
-      <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-navy via-primary-700 to-primary-600">
+      <section className="relative min-h-screen bg-gradient-to-br from-navy via-primary-700 to-primary-600">
         {/* Animated Background Elements */}
         <div className="absolute inset-0">
           <div className="absolute top-20 left-4 sm:left-10 w-72 h-72 bg-primary-400/20 rounded-full blur-3xl animate-pulse"></div>
@@ -74,10 +74,10 @@ const Home = () => {
           }}
         ></div>
         
-        <div className="relative container-custom text-center z-10">
+        <div className="relative container-custom text-center z-10 pt-24 md:pt-40 lg:pt-48 pb-20">
           {/* Main Headline */}
           <div className="mb-8" data-aos="fade-up" data-aos-delay="100">
-            <h1 className="text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-display font-black text-white leading-tight mb-6">
+            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-display font-black text-white leading-tight mb-6">
               Transform Your Business
               <span className="block bg-gradient-to-r from-primary-300 via-white to-primary-200 bg-clip-text text-transparent">
                 With Expert
@@ -90,7 +90,7 @@ const Home = () => {
           
           {/* Subtitle */}
           <div className="mb-12" data-aos="fade-up" data-aos-delay="200">
-            <p className="text-xl md:text-2xl lg:text-3xl text-gray-200 max-w-3xl mx-auto leading-relaxed font-light">
+            <p className="text-lg sm:text-xl md:text-2xl lg:text-3xl text-gray-200 max-w-3xl mx-auto leading-relaxed font-light px-4">
               We deliver bespoke technology solutions that drive growth for 
               <span className="text-white font-medium"> forward-thinking businesses</span> across the UK.
             </p>
