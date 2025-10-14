@@ -55,13 +55,13 @@ const Home = () => {
   ]
 
   return (
-    <div>
+    <div className="overflow-x-hidden">
       {/* Hero Section */}
       <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-navy via-primary-700 to-primary-600">
         {/* Animated Background Elements */}
         <div className="absolute inset-0">
-          <div className="absolute top-20 left-10 w-72 h-72 bg-primary-400/20 rounded-full blur-3xl animate-pulse"></div>
-          <div className="absolute bottom-20 right-10 w-96 h-96 bg-white/10 rounded-full blur-3xl animate-pulse delay-700"></div>
+          <div className="absolute top-20 left-4 sm:left-10 w-72 h-72 bg-primary-400/20 rounded-full blur-3xl animate-pulse"></div>
+          <div className="absolute bottom-20 right-4 sm:right-10 w-96 h-96 bg-white/10 rounded-full blur-3xl animate-pulse delay-700"></div>
           <div className="absolute top-1/3 right-1/3 w-64 h-64 bg-primary-300/20 rounded-full blur-2xl animate-pulse delay-500"></div>
         </div>
         
@@ -97,16 +97,16 @@ const Home = () => {
           </div>
           
           {/* CTA Buttons */}
-          <div className="flex flex-col sm:flex-row gap-6 justify-center mb-16" data-aos="fade-up" data-aos-delay="300">
-            <Link to="/contact">
-              <button className="group relative px-8 py-4 bg-white text-primary-600 rounded-full text-lg font-bold transition-all duration-300 hover:scale-105 hover:shadow-2xl transform">
-                <span className="relative z-10">Request Free Consultation</span>
+          <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center mb-16 px-4" data-aos="fade-up" data-aos-delay="300">
+            <Link to="/contact" className="w-full sm:w-auto">
+              <button className="group relative w-full sm:w-auto px-6 sm:px-8 py-3 sm:py-4 bg-white text-primary-600 rounded-full text-base sm:text-lg font-bold transition-all duration-300 hover:scale-105 hover:shadow-2xl transform">
+                <span className="relative z-10 whitespace-nowrap">Request Free Consultation</span>
                 <div className="absolute inset-0 bg-gradient-to-r from-primary-100 to-white rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
               </button>
             </Link>
-            <Link to="/services">
-              <button className="group relative px-8 py-4 border-2 border-white text-white rounded-full text-lg font-bold transition-all duration-300 hover:bg-white hover:text-primary-600 hover:scale-105 transform">
-                See Our Solutions
+            <Link to="/services" className="w-full sm:w-auto">
+              <button className="group relative w-full sm:w-auto px-6 sm:px-8 py-3 sm:py-4 border-2 border-white text-white rounded-full text-base sm:text-lg font-bold transition-all duration-300 hover:bg-white hover:text-primary-600 hover:scale-105 transform">
+                <span className="whitespace-nowrap">See Our Solutions</span>
                 <svg className="inline-block w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
                 </svg>
@@ -116,7 +116,7 @@ const Home = () => {
         </div>
         
         {/* Floating Elements */}
-        <div className="absolute top-1/4 left-10 hidden lg:block" data-aos="fade-right" data-aos-delay="800">
+        <div className="absolute top-1/4 left-4 sm:left-10 hidden lg:block" data-aos="fade-right" data-aos-delay="800">
           <div className="w-20 h-20 bg-white/10 rounded-2xl backdrop-blur-sm border border-white/20 flex items-center justify-center animate-bounce">
             <svg className="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
@@ -124,7 +124,7 @@ const Home = () => {
           </div>
         </div>
         
-        <div className="absolute top-1/3 right-10 hidden lg:block" data-aos="fade-left" data-aos-delay="900">
+        <div className="absolute top-1/3 right-4 sm:right-10 hidden lg:block" data-aos="fade-left" data-aos-delay="900">
           <div className="w-16 h-16 bg-primary-400/20 rounded-xl backdrop-blur-sm border border-white/20 flex items-center justify-center animate-pulse">
             <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z" />
