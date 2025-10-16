@@ -65,7 +65,7 @@ const About = () => {
   ]
 
   return (
-    <div className="overflow-x-hidden">
+    <div>
       {/* Hero Section */}
       <section className="relative bg-gradient-to-br from-navy to-primary-600 text-white">
         <div className="absolute inset-0 bg-black/10"></div>

@@ -4,10 +4,12 @@ import AOS from 'aos'
 import 'aos/dist/aos.css'
 import Header from './components/Header'
 import Footer from './components/Footer'
+import ProjectModal from './components/ProjectModal'
 import Home from './pages/Home'
 import Services from './pages/Services'
 import About from './pages/About'
 import Contact from './pages/Contact'
+import Chat from './pages/Chat'
 
 // ScrollToTop component to handle route changes
 function ScrollToTop() {
@@ -42,9 +44,11 @@ function App() {
             <Route path="/services" element={<Services />} />
             <Route path="/about" element={<About />} />
             <Route path="/contact" element={<Contact />} />
+            <Route path="/chat" element={<Chat />} />
           </Routes>
         </main>
         <Footer />
+        <ProjectModal />
       </div>
     </Router>
   )

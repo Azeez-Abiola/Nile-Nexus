@@ -1,6 +1,8 @@
 import { Link } from 'react-router-dom'
 import Button from '../components/Button'
 import Card from '../components/Card'
+import HeroSlider from '../components/HeroSlider'
+import FloatingChatIcon from '../components/FloatingChatIcon'
 
 const Home = () => {
   const services = [
@@ -57,32 +59,28 @@ const Home = () => {
   return (
     <div>
       {/* Hero Section */}
-      <section className="relative min-h-screen bg-gradient-to-br from-navy via-primary-700 to-primary-600">
-        {/* Animated Background Elements */}
-        <div className="absolute inset-0">
-          <div className="absolute top-20 left-4 sm:left-10 w-72 h-72 bg-primary-400/20 rounded-full blur-3xl animate-pulse"></div>
-          <div className="absolute bottom-20 right-4 sm:right-10 w-96 h-96 bg-white/10 rounded-full blur-3xl animate-pulse delay-700"></div>
-          <div className="absolute top-1/3 right-1/3 w-64 h-64 bg-primary-300/20 rounded-full blur-2xl animate-pulse delay-500"></div>
-        </div>
+      <section className="relative min-h-screen bg-navy overflow-hidden">
+        {/* Hero Image Slider Background */}
+        <HeroSlider />
         
         {/* Grid Pattern Overlay */}
         <div 
-          className="absolute inset-0 opacity-5"
+          className="absolute inset-0 opacity-5 z-10"
           style={{
             backgroundImage: `radial-gradient(circle at 1px 1px, rgba(255,255,255,0.3) 1px, transparent 0)`,
             backgroundSize: '50px 50px'
           }}
         ></div>
         
-        <div className="relative container-custom text-center z-10 pt-24 md:pt-40 lg:pt-48 pb-20">
+        <div className="relative container-custom text-center z-20 pt-24 md:pt-40 lg:pt-48 pb-20">
           {/* Main Headline */}
           <div className="mb-8" data-aos="fade-up" data-aos-delay="100">
             <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-display font-black text-white leading-tight mb-6">
               Transform Your Business
-              <span className="block bg-gradient-to-r from-primary-300 via-white to-primary-200 bg-clip-text text-transparent">
+              <span className="block bg-gradient-to-r from-gray-400 via-gray-100 to-gray-400 bg-clip-text text-transparent">
                 With Expert
               </span>
-              <span className="block text-primary-200">
+              <span className="block text-white">
                 Digital Solutions
               </span>
             </h1>
@@ -286,6 +284,9 @@ const Home = () => {
           </div>
         </div>
       </section>
+
+      {/* Floating Chat Icon */}
+      <FloatingChatIcon />
     </div>
   )
 }
