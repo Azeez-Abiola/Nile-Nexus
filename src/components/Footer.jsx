@@ -11,7 +11,7 @@ const Footer = () => {
           <div className="md:col-span-2">
             <div className="mb-4">
               <img 
-                src="../images/nilenexus1.png" 
+                src="/images/nilenexus1.png" 
                 alt="Nile Nexus Talents" 
                 className="h-16"
               />
