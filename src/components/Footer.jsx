@@ -10,10 +10,11 @@ const Footer = () => {
           {/* Company Info */}
           <div className="md:col-span-2">
             <div className="mb-4">
-              <h3 className="text-2xl font-display font-bold">
-                Nile Nexus
-                <span className="text-primary-500 ml-1">Talents</span>
-              </h3>
+              <img 
+                src="/images/nilenexus1.png" 
+                alt="Nile Nexus Talents" 
+                className="h-16"
+              />
             </div>
             <p className="text-gray-300 mb-6 max-w-md">
               Empowering businesses with reliable technical expertise. From software development to IT support, 

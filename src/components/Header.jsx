@@ -45,13 +45,16 @@ const Header = () => {
             <div className="flex items-center">
               <Link 
                 to="/" 
-                className={`font-display font-bold transition-all duration-300 ${
-                  isScrolled ? 'text-xl' : 'text-2xl'
-                } text-navy hover:text-primary-600`}
+                className="flex items-center transition-all duration-300"
                 onClick={handleNavigation}
               >
-                Nile Nexus
-                <span className="text-primary-500 ml-1">Talents</span>
+                <img 
+                  src="/images/nilenexus3.png" 
+                  alt="Nile Nexus Talents" 
+                  className={`transition-all duration-300 ${
+                    isScrolled ? 'h-12' : 'h-16'
+                  }`}
+                />
               </Link>
             </div>
 

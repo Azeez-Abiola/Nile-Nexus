@@ -125,8 +125,8 @@ const About = () => {
             </div>
             <div data-aos="fade-left">
               <img 
-                src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
-                alt="Team collaboration"
+                src="/images/nilenexus3.png" 
+                alt="Nile Nexus Talents"
                 className="rounded-xl shadow-lg"
               />
             </div>
