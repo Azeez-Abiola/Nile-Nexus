@@ -1,5 +1,4 @@
 import { Link } from 'react-router-dom'
-import logoImage from '/images/nilenexus1.png'
 
 const Footer = () => {
   const currentYear = new Date().getFullYear()
@@ -12,7 +11,7 @@ const Footer = () => {
           <div className="md:col-span-2">
             <div className="mb-4">
               <img 
-                src={logoImage} 
+                src="/images/nilenexus1.png" 
                 alt="Nile Nexus Talents" 
                 className="h-16"
               />

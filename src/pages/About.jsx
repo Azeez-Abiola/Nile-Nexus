@@ -1,7 +1,6 @@
 import { Link } from 'react-router-dom'
 import Button from '../components/Button'
 import Card from '../components/Card'
-import aboutImage from '/images/nilenexus3.png'
 
 const About = () => {
   const values = [
@@ -126,7 +125,7 @@ const About = () => {
             </div>
             <div data-aos="fade-left">
               <img 
-                src={aboutImage} 
+                src="/images/nilenexus3.png" 
                 alt="Nile Nexus Talents"
                 className="rounded-xl shadow-lg"
               />
