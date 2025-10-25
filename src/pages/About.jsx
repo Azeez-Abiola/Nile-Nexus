@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom'
 import Button from '../components/Button'
 import Card from '../components/Card'
-import aboutImage from '/images/nilenexus3.png?url'
+import aboutImage from '../assets/nilenexus3.png'
 
 const About = () => {
   const values = [

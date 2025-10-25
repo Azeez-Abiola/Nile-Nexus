@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react'
 import { Link, useLocation } from 'react-router-dom'
-import logoImage from '/images/nilenexus3.png?url'
+import logoImage from '../assets/nilenexus3.png'
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false)

@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom'
-import logoImage from '/images/nilenexus1.png?url'
+import logoImage from '../assets/nilenexus1.png'
 
 const Footer = () => {
   const currentYear = new Date().getFullYear()
