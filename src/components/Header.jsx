@@ -49,7 +49,7 @@ const Header = () => {
                 onClick={handleNavigation}
               >
                 <img 
-                  src="/images/nilenexus3.png" 
+                  src="./images/nilenexus3.png" 
                   alt="Nile Nexus Talents" 
                   className={`transition-all duration-300 ${
                     isScrolled ? 'h-12' : 'h-16'
