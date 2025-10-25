@@ -6,7 +6,7 @@ const About = () => {
   const values = [
     {
       title: 'Innovation',
-      description: 'We embrace cutting-edge technologies and creative solutions to solve complex business challenges.',
+      description: 'We embrace cutting-edge technology and creative solutions to solve complex business challenges.',
       image: 'https://images.unsplash.com/photo-1551434678-e076c223a692?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80'
     },
     {
