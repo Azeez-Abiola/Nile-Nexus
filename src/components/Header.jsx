@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react'
 import { Link, useLocation } from 'react-router-dom'
+import logoImage from '/images/nilenexus3.png?url'
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
@@ -49,7 +50,7 @@ const Header = () => {
                 onClick={handleNavigation}
               >
                 <img 
-                  src="/images/nilenexus3.png" 
+                  src={logoImage} 
                   alt="Nile Nexus Talents" 
                   className={`transition-all duration-300 ${
                     isScrolled ? 'h-12' : 'h-16'
