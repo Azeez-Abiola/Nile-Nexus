@@ -5,6 +5,7 @@ import 'aos/dist/aos.css'
 import Header from './components/Header'
 import Footer from './components/Footer'
 import ProjectModal from './components/ProjectModal'
+import Favicon from './components/Favicon'
 import Home from './pages/Home'
 import Services from './pages/Services'
 import About from './pages/About'
@@ -36,6 +37,7 @@ function App() {
   return (
     <Router>
       <div className="min-h-screen bg-white overflow-x-hidden">
+        <Favicon />
         <ScrollToTop />
         <Header />
         <main>
